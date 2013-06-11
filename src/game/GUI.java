@@ -12,15 +12,19 @@ import java.util.TimerTask;
 
 public class GUI extends JPanel implements KeyListener, MouseListener, MouseMotionListener{
 
-	Main main;
-	Paint paint;
+	int mX, mY;
+
+	private static GUI instance;
+	private Paint paint = Paint.getInstance();
+	
 	JFrame f = new JFrame("Operation Lapis");
 	Timer draw = new Timer();
 	
-	public GUI(Main main){
-		this.main = main;
-		paint = new Paint(main);
-		
+	public static GUI getInstance(){
+		if (instance == null){
+			instance = new GUI();
+		}
+		return instance;
 	}
 	
 	public void drawGUI(){
@@ -34,10 +38,10 @@ public class GUI extends JPanel implements KeyListener, MouseListener, MouseMoti
 		f.addKeyListener(this);
 		f.addMouseListener(this);
 		f.addMouseMotionListener(this); 
-		f.add(paint);
+		f.add(Paint.getInstance());
 		
 	}
-	
+
 	TimerTask drawTask = new TimerTask() {
 		public void run() {
 			
@@ -81,10 +85,10 @@ public class GUI extends JPanel implements KeyListener, MouseListener, MouseMoti
 		int key = e.getKeyCode();
 		
 		if (key == KeyEvent.VK_ESCAPE){
-			if (main.menu = false){
-				main.menu = true;
+			if (paint.isMenu() == false){
+				paint.setMenu(true);
 			}else{
-				main.menu = false;
+				paint.setMenu(false);
 			}
 		}
 		
@@ -110,9 +114,27 @@ public class GUI extends JPanel implements KeyListener, MouseListener, MouseMoti
 
 	public void mouseMoved(MouseEvent e ) {
 		
-		main.mX = e.getX();
-		main.mY = e.getY();
+		mX = e.getX();
+		mY = e.getY();
 		
 	}
+
+	public int getmX() {
+		return mX;
+	}
+
+	public void setmX(int mX) {
+		this.mX = mX;
+	}
+
+	public int getmY() {
+		return mY;
+	}
+
+	public void setmY(int mY) {
+		this.mY = mY;
+	}
+	
+	
 	
 }

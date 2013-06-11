@@ -5,17 +5,24 @@ import java.awt.*;
 
 public class Paint extends JPanel {
 
-	Main main;
-
-	public Paint(Main main) {
-		this.main = main;
+	private static Paint paint;
+	
+	public static Paint getInstance() {
+		if (paint == null) {
+			paint = new Paint();
+		}
+		return paint;
 	}
+
+	private int lastTime, currentTime, fps;
+	boolean menu;
+	private GUI gui = GUI.getInstance();
 
 	public void paintComponent(Graphics g) {
 
-		main.lastTime = main.currentTime;
-		main.currentTime = (int) System.currentTimeMillis();
-		main.fps = 1000 / (main.currentTime - main.lastTime);
+		lastTime = currentTime;
+		currentTime = (int) System.currentTimeMillis();
+		fps = 1000 / (currentTime - lastTime);
 
 		super.paintComponent(g);
 
@@ -25,8 +32,8 @@ public class Paint extends JPanel {
 
 			g.setColor(Color.lightGray);
 
-			if (main.mY < 76 && main.mY > 47 && main.mX > x + 3
-					&& main.mX < x + 123) {
+			if (gui.getmY() < 76 && gui.getmY() > 47 && gui.getmX() > x + 3
+					&& gui.getmX() < x + 123) {
 				g.setColor(Color.gray);
 			}
 
@@ -47,7 +54,7 @@ public class Paint extends JPanel {
 		// DRAW TOP MENU TEXT
 		g.setColor(Color.BLACK);
 		g.drawString("Name: ", 5, 15);
-		g.drawString("FPS: " + main.fps, 730, 15);
+		g.drawString("FPS: " + fps, 730, 15);
 
 		// DRAW TOP BUTTON TEXT
 		g.drawString("Key Text", 25, 40);
@@ -64,4 +71,14 @@ public class Paint extends JPanel {
 
 	}
 
+	public boolean isMenu() {
+		return menu;
+	}
+
+	public void setMenu(boolean menu) {
+		this.menu = menu;
+	}
+
+	
+	
 }
