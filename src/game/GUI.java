@@ -15,8 +15,7 @@ public class GUI extends JPanel implements KeyListener, MouseListener, MouseMoti
 	int mX, mY;
 
 	private static GUI instance;
-	private Paint paint = Paint.getInstance();
-	
+
 	JFrame f = new JFrame("Operation Lapis");
 	Timer draw = new Timer();
 	
@@ -26,6 +25,7 @@ public class GUI extends JPanel implements KeyListener, MouseListener, MouseMoti
 		}
 		return instance;
 	}
+	
 	
 	public void drawGUI(){
 		
@@ -44,7 +44,6 @@ public class GUI extends JPanel implements KeyListener, MouseListener, MouseMoti
 
 	TimerTask drawTask = new TimerTask() {
 		public void run() {
-			
 			f.repaint();
 		}
 	};
@@ -82,16 +81,7 @@ public class GUI extends JPanel implements KeyListener, MouseListener, MouseMoti
 	@Override
 	public void keyPressed(KeyEvent e) {
 
-		int key = e.getKeyCode();
-		
-		if (key == KeyEvent.VK_ESCAPE){
-			if (paint.isMenu() == false){
-				paint.setMenu(true);
-			}else{
-				paint.setMenu(false);
-			}
-		}
-		
+	
 	}
 
 	@Override

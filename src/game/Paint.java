@@ -6,6 +6,7 @@ import java.awt.*;
 public class Paint extends JPanel {
 
 	private static Paint paint;
+	private GUI gui = GUI.getInstance();
 	
 	public static Paint getInstance() {
 		if (paint == null) {
@@ -13,10 +14,9 @@ public class Paint extends JPanel {
 		}
 		return paint;
 	}
-
+	
 	private int lastTime, currentTime, fps;
 	boolean menu;
-	private GUI gui = GUI.getInstance();
 
 	public void paintComponent(Graphics g) {
 
