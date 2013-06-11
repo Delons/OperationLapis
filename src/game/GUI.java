@@ -78,6 +78,15 @@ public class GUI extends JPanel implements KeyListener, MouseListener, MouseMoti
 	@Override
 	public void keyPressed(KeyEvent e) {
 
+		int key = e.getKeyCode();
+		
+		if (key == KeyEvent.VK_ESCAPE){
+			if (main.menu = false){
+				main.menu = true;
+			}else{
+				main.menu = false;
+			}
+		}
 		
 	}
 
