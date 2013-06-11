@@ -7,16 +7,15 @@ public class Paint extends JPanel {
 
 	private static Paint paint;
 	private GUI gui = GUI.getInstance();
-	
+
 	public static Paint getInstance() {
 		if (paint == null) {
 			paint = new Paint();
 		}
 		return paint;
 	}
-	
+
 	private int lastTime, currentTime, fps;
-	boolean menu;
 
 	public void paintComponent(Graphics g) {
 
@@ -54,7 +53,7 @@ public class Paint extends JPanel {
 		// DRAW TOP MENU TEXT
 		g.setColor(Color.BLACK);
 		g.drawString("Name: ", 5, 15);
-		g.drawString("FPS: " + fps, 730, 15);
+		g.drawString("FPS: " + fps + gui.isMenu(), 730, 15);
 
 		// DRAW TOP BUTTON TEXT
 		g.drawString("Key Text", 25, 40);
@@ -69,16 +68,15 @@ public class Paint extends JPanel {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 50, 795, 495);
 
+		//DRAW MENU
+		
+		if (gui.isMenu() == true){
+			g.setColor(Color.darkGray);
+			g.drawRect(200, 300, 200, 400);
+			g.setColor(Color.lightGray);
+			g.fillRect(201, 301, 199, 399);
+		}
+		
 	}
 
-	public boolean isMenu() {
-		return menu;
-	}
-
-	public void setMenu(boolean menu) {
-		this.menu = menu;
-	}
-
-	
-	
 }
