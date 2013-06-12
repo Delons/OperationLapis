@@ -1,5 +1,7 @@
 package game;
 
+import javax.swing.JOptionPane;
+
 public class Functions {
 	
 	public static Functions functions;
@@ -12,11 +14,22 @@ public class Functions {
 	}
 	
 	boolean writing;
-	String out;
-	
-	public void write(String text){
+	String out = "";
+	int sleep = 100;
+
+	public void write(String text, boolean keep){
 		
+		if(keep == false){
+			out = "";
+		}
 		
+		for (int x = 0; x == text.length() - 1; x++){
+			out += text.substring(x, 1);
+			JOptionPane.showMessageDialog(null, "lol");
+			//try{
+			//	Thread.sleep(sleep);
+			//}catch (Exception e){}
+		}
 		
 	}
 	

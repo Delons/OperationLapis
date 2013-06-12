@@ -7,8 +7,9 @@ public class Main {
 	}
 
 	public void startGame() {
-
+		
 		GUI.getInstance().drawGUI();
+		Missions.getInstance().firstTime();
 
 	}
 }

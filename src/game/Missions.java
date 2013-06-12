@@ -18,14 +18,14 @@ public class Missions {
 	
 	public void standBy(){
 		
-		functions.write("Please choose a mission");
+		
 		
 	}
 	
 	public void firstTime(){
 		
-		
-		
+		functions.write("Load a saved game or start a new one", false);
+		standBy();
 	}
 	
 	public void mission110(){

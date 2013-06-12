@@ -9,6 +9,7 @@ public class Paint extends JPanel {
 	private GUI gui = GUI.getInstance();
 	private Character character = Character.getInstance();
 	private Missions missions = Missions.getInstance();
+	private Functions functions = Functions.getInstance();
 
 	public static Paint getInstance() {
 		if (paint == null) {
@@ -70,7 +71,7 @@ public class Paint extends JPanel {
 		g.fillRect(0, 50, 795, 495);
 
 		g.setColor(Color.GREEN);
-		g.drawString("TSTT", 5, 65);
+		g.drawString(functions.getOut(), 5, 65);
 
 		// DRAW BOTTOM INPUT
 
