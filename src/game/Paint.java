@@ -45,6 +45,7 @@ public class Paint extends JPanel {
 		}
 
 		// DRAW MENU BUTTON TEXT
+		g.setColor(Color.BLACK);
 		g.drawString("Key Text", 25, 40);
 		g.drawString("Attunement", 125, 40);
 		g.drawString("Cultralia", 245, 40);
@@ -61,17 +62,22 @@ public class Paint extends JPanel {
 		// DRAW MAIN WINDOW
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 50, 795, 495);
+	
+		g.setColor(Color.GREEN);
+		g.drawString("TSTT", 5, 65);
+		
+		//DRAW BOTTOM INPUT
+		
+		//g.setColor(Color.black);
+		//g.drawString(gui.getInput(), 5, 555);
 
 		// DRAW MENU
-
 		if (gui.isMenu() == true) {
 			g.setColor(Color.darkGray);
 			g.drawRect(300, 122, 200, 300);
 			g.setColor(Color.lightGray);
 			g.fillRect(301, 123, 199, 299);
-
-			// g.drawRect(305, arg1, arg2, arg3)
-
+			
 		}
 
 	}
