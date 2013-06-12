@@ -1,5 +1,7 @@
 package game;
 
+import javax.swing.JOptionPane;
+
 public class Missions {
 
 	
@@ -24,7 +26,7 @@ public class Missions {
 	
 	public void firstTime(){
 		
-		functions.write("Load a saved game or start a new one", false);
+		functions.write("Load a saved game or start a new one /n To load a game, click 'Menu' or press 'Escape'", false);
 		standBy();
 	}
 	

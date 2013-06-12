@@ -23,13 +23,12 @@ public class Functions {
 			out = "";
 		}
 		
-		for (int x = 0; x == text.length() - 1; x++){
-			out += text.substring(x, 1);
-			JOptionPane.showMessageDialog(null, "lol");
+		//for (int x = 0; x < text.length(); x++){
+			out = text;
 			//try{
 			//	Thread.sleep(sleep);
 			//}catch (Exception e){}
-		}
+		//}
 		
 	}
 	
