@@ -28,5 +28,11 @@ public class Missions {
 		
 		
 	}
+
+	public String getMissionName() {
+		return missionName;
+	}
+	
+	
 	
 }

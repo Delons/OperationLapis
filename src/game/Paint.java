@@ -7,6 +7,8 @@ public class Paint extends JPanel {
 
 	private static Paint paint;
 	private GUI gui = GUI.getInstance();
+	private Character character = Character.getInstance();
+	private Missions missions = Missions.getInstance();
 
 	public static Paint getInstance() {
 		if (paint == null) {
@@ -56,8 +58,7 @@ public class Paint extends JPanel {
 
 		// DRAW TOP MENU TEXT
 		g.setColor(Color.BLACK);
-		g.drawString("Name: ", 5, 15);
-		g.drawString("FPS: " + fps, 730, 15);
+		g.drawString("Name: " + character.getName() + "     Hints: " + character.getHints() + "     Points: " + character.getPoints() + "     Level: "  + "     " + missions.getMissionName() + "          FPS: " + fps, 5, 15);
 
 		// DRAW MAIN WINDOW
 		g.setColor(Color.BLACK);
