@@ -15,6 +15,14 @@ public class Missions {
 	
 	public void standBy(){
 		
+		
+		
+	}
+	
+	public void firstTime(){
+		
+		
+		
 	}
 	
 	public void mission110(){
