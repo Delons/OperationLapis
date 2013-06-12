@@ -85,7 +85,7 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 		int key = e.getKeyCode();
 		
 		if (key == KeyEvent.VK_ESCAPE){
-			if (menu = true){
+			if (menu == true){
 				menu = false;
 			} else {
 				menu = true;
