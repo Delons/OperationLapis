@@ -2,6 +2,8 @@ package game;
 
 public class Missions {
 
+	
+	
 	private static Missions missions;
 
 	public static Missions getInstance() {
@@ -11,11 +13,12 @@ public class Missions {
 		return missions;
 	}
 	
+	private Functions functions = Functions.getInstance();
 	String missionName;
 	
 	public void standBy(){
 		
-		
+		functions.write("Please choose a mission");
 		
 	}
 	
