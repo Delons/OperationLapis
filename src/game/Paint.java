@@ -18,13 +18,17 @@ public class Paint extends JPanel {
 		return paint;
 	}
 
-	private int lastTime, currentTime, fps;
-
+	private int  lastTime2, currentTime, fps;
+	private int lastTime = 0;
+	
 	public void paintComponent(Graphics g) {
 
-		lastTime = currentTime;
+		lastTime2 = currentTime;
 		currentTime = (int) System.currentTimeMillis();
-		fps = 1000 / (currentTime - lastTime);
+		if (currentTime - lastTime > 500) {
+			lastTime = currentTime;
+			fps = 1000 / (currentTime - lastTime2);
+		}
 
 		super.paintComponent(g);
 
@@ -100,6 +104,16 @@ public class Paint extends JPanel {
 				g.fillRect(331, y + 1, 139, 29);
 
 			}
+
+			g.setColor(Color.black);
+			g.drawString("Settings", 360, 160);
+			// ADD UPDATE CHECKER IN THE OPTIONS MENU
+			g.drawString("Load Game", 360, 200);
+			g.drawString("Save Game", 360, 240);
+			g.drawString("New Game", 360, 280);
+			g.drawString("Help", 360, 320);
+			g.drawString("Exit", 360, 360);
+
 		}
 
 	}
