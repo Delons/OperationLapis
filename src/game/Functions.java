@@ -15,7 +15,7 @@ public class Functions {
 	
 	boolean writing;
 	String out = "";
-	int sleep = 100;
+	int sleep = 50;
 
 	public void write(String text, boolean keep){
 		
@@ -23,12 +23,12 @@ public class Functions {
 			out = "";
 		}
 		
-		//for (int x = 0; x < text.length(); x++){
-			out = text;
-			//try{
-			//	Thread.sleep(sleep);
-			//}catch (Exception e){}
-		//}
+		for (int x = 0; x < text.length() - 1; x++){
+			out += text.substring(x, x + 1);
+			try{
+				Thread.sleep(sleep);
+			} catch (Exception e){}
+		}
 		
 	}
 	
