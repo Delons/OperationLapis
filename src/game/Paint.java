@@ -18,9 +18,9 @@ public class Paint extends JPanel {
 		return paint;
 	}
 
-	private int  lastTime2, currentTime, fps;
+	private int lastTime2, currentTime, fps;
 	private int lastTime = 0;
-	
+
 	public void paintComponent(Graphics g) {
 
 		lastTime2 = currentTime;
@@ -45,8 +45,13 @@ public class Paint extends JPanel {
 			if (gui.getmY() < 76 && gui.getmY() > 47 && gui.getmX() > x + 3
 					&& gui.getmX() < x + 123 && gui.isMenu() == false) {
 				g.setColor(Color.gray);
+				
+				if (gui.isClicked() == true && gui.getmX() > 720){
+					gui.setMenu(true);
+				}
+				
 			}
-
+			
 			g.fillRect(x + 1, 21, 119, 29);
 
 		}
@@ -113,6 +118,7 @@ public class Paint extends JPanel {
 			g.drawString("New Game", 360, 280);
 			g.drawString("Help", 360, 320);
 			g.drawString("Exit", 360, 360);
+			g.drawString("Back to Game", 360, 400);
 
 		}
 

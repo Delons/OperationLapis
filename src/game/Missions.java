@@ -26,7 +26,7 @@ public class Missions {
 	
 	public void firstTime(){
 		
-		functions.write("Load a saved game or start a new one /n To load a game, click 'Menu' or press 'Escape'", false);
+		functions.write("Load a saved game or start a new one. To load a game, click 'Menu' or press 'Escape'", false);
 		standBy();
 	}
 	

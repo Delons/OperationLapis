@@ -14,7 +14,7 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 		MouseMotionListener {
 
 	int mX, mY;
-	boolean menu;
+	boolean menu, clicked;
 	String input;
 
 	private static GUI instance;
@@ -52,8 +52,10 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 
 	public void mouseClicked(MouseEvent e) {
 
-		
-		
+		if (e.getButton() == MouseEvent.BUTTON1) {
+			clicked = true;
+		}
+
 	}
 
 	@Override
@@ -76,25 +78,26 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
 
+		clicked = false;
+		
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 
 		int key = e.getKeyCode();
-		
-		if (key == KeyEvent.VK_ESCAPE){
-			if (menu == true){
+
+		if (key == KeyEvent.VK_ESCAPE) {
+			if (menu == true) {
 				menu = false;
 			} else {
 				menu = true;
 			}
 		} else {
-			//input += KeyEvent.getExtendedKeyCodeForChar(key);
+			// input += KeyEvent.getExtendedKeyCodeForChar(key);
 		}
-		
+
 	}
 
 	@Override
@@ -150,6 +153,13 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 		return input;
 	}
 	
-	
-	
+
+	public boolean isClicked() {
+		return clicked;
+	}
+
+	public void setClicked(boolean clicked) {
+		this.clicked = clicked;
+	}
+
 }
