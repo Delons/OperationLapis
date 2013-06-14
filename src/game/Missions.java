@@ -4,8 +4,6 @@ import javax.swing.JOptionPane;
 
 public class Missions {
 
-	
-	
 	private static Missions missions;
 
 	public static Missions getInstance() {

@@ -1,7 +1,11 @@
 package game;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class Paint extends JPanel {
 
@@ -10,6 +14,7 @@ public class Paint extends JPanel {
 	private Character character = Character.getInstance();
 	private Missions missions = Missions.getInstance();
 	private Functions functions = Functions.getInstance();
+	private Messages messages = Messages.getInstance();
 
 	public static Paint getInstance() {
 		if (paint == null) {
@@ -45,13 +50,13 @@ public class Paint extends JPanel {
 			if (gui.getmY() < 76 && gui.getmY() > 47 && gui.getmX() > x + 3
 					&& gui.getmX() < x + 123 && gui.isMenu() == false) {
 				g.setColor(Color.gray);
-				
-				if (gui.isClicked() == true && gui.getmX() > 720){
+
+				if (gui.isClicked() == true && gui.getmX() > 720) {
 					gui.setMenu(true);
 				}
-				
+
 			}
-			
+
 			g.fillRect(x + 1, 21, 119, 29);
 
 		}
@@ -119,6 +124,20 @@ public class Paint extends JPanel {
 			g.drawString("Help", 360, 320);
 			g.drawString("Exit", 360, 360);
 			g.drawString("Back to Game", 360, 400);
+
+		}
+
+		if (messages.isShowMessage() == true) {
+
+			BufferedImage logo = null;
+
+			try {
+				logo = ImageIO.read(new File("src/resource/demiurge.png"));
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "lol");
+			}
+
+			g.drawImage(logo, 5, 5, 100, 100, this);
 
 		}
 

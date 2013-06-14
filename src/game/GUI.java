@@ -16,6 +16,8 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 	int mX, mY;
 	boolean menu, clicked;
 	String input;
+	
+	private Messages messages = Messages.getInstance();
 
 	private static GUI instance;
 
@@ -94,8 +96,10 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 			} else {
 				menu = true;
 			}
-		} else {
-			// input += KeyEvent.getExtendedKeyCodeForChar(key);
+		} else if (key == KeyEvent.VK_ENTER) {
+			if (messages.isShowMessage() == true){
+				messages.setShowMessage(true);
+			}
 		}
 
 	}
