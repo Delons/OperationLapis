@@ -98,7 +98,7 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 			}
 		} else if (key == KeyEvent.VK_ENTER) {
 			if (messages.isShowMessage() == true){
-				messages.setShowMessage(true);
+				messages.setShowMessage(false);
 			}
 		}
 

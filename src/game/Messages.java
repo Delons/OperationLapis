@@ -12,12 +12,12 @@ public class Messages {
 	}
 	
 	boolean showMessage = true;
-	String messageText;
+	String messageText = "The Demiurge welcomes you \nto Operation Lapis. \n\nPress enter to continue...";
 	
 	public void welcome(){
 		
 		showMessage = true;
-		messageText = "The Demiurge welcomes you to Operation Lapis.";
+		messageText = "The Demiurge welcomes you to Operation Lapis. \n\nPress enter to continue...";
 		
 	}
 
@@ -29,6 +29,12 @@ public class Messages {
 		this.showMessage = showMessage;
 	}
 
-	
+	public String getMessageText() {
+		return messageText;
+	}
+
+	public void setMessageText(String messageText) {
+		this.messageText = messageText;
+	}
 	
 }

@@ -137,7 +137,14 @@ public class Paint extends JPanel {
 				JOptionPane.showMessageDialog(null, "lol");
 			}
 
-			g.drawImage(logo, 5, 5, 100, 100, this);
+			g.setColor(Color.darkGray);
+			g.drawRect(240, 200, 350, 180);
+			g.setColor(Color.lightGray);
+			g.fillRect(241, 201, 349, 179);
+			g.setColor(Color.black);
+			g.drawString(messages.getMessageText(), 310, 210);
+			
+			g.drawImage(logo, 250, 210, 100, 100, this);
 
 		}
 
