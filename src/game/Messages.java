@@ -11,8 +11,8 @@ public class Messages {
 		return messages;
 	}
 	
-	boolean showMessage = true;
-	String messageText = "The Demiurge welcomes you \nto Operation Lapis. \n\nPress enter to continue...";
+	boolean showMessage;
+	String messageText = "";
 	
 	public void welcome(){
 		
