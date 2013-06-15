@@ -106,8 +106,7 @@ public class Paint extends JPanel {
 				g.setColor(Color.black);
 				g.drawRect(330, y, 140, 30);
 
-				if (gui.getmY() > y + 30 && gui.getmY() < y
-						&& gui.getmX() > 330 && gui.getmX() < 330 + 140) {
+				if (gui.getmY() > y + 30 && gui.getmY() < y && gui.getmX() > 330 && gui.getmX() < 330 + 140) {
 					g.setColor(Color.gray);
 				} else {
 					g.setColor(Color.lightGray);
