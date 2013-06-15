@@ -53,6 +53,8 @@ public class Paint extends JPanel {
 
 				if (gui.isClicked() == true && gui.getmX() > 720) {
 					gui.setMenu(true);
+				} else {
+					gui.setMenu(false);
 				}
 
 			}
