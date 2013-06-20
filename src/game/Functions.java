@@ -13,12 +13,11 @@ public class Functions {
 		return functions;
 	}
 	
-	boolean writing;
+	boolean paused;
 	String out = "";
 	int sleep = 50;
 
 	public void write(String text, boolean keep){
-		
 		
 		if(keep == false){
 			out = "";
@@ -31,14 +30,15 @@ public class Functions {
 			} catch (Exception e){}
 		}
 		
+		
 	}
 	
 	public boolean isWriting() {
-		return writing;
+		return paused;
 	}
 
 	public void setWriting(boolean writing) {
-		this.writing = writing;
+		this.paused = writing;
 	}
 
 	public String getOut() {

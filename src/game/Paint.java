@@ -54,7 +54,7 @@ public class Paint extends JPanel {
 				if (gui.isClicked() == true && gui.getmX() > 720) {
 					gui.setMenu(true);
 				} else {
-					gui.setMenu(false);
+
 				}
 
 			}
@@ -66,11 +66,11 @@ public class Paint extends JPanel {
 		// DRAW MENU BUTTON TEXT
 		g.setColor(Color.BLACK);
 		g.drawString("Key Text", 25, 40);
-		g.drawString("Attunement", 125, 40);
-		g.drawString("Cultralia", 245, 40);
-		g.drawString("Navigation", 365, 40);
-		g.drawString("Verba", 485, 40);
-		g.drawString("Gramattica", 605, 40);
+		g.drawString("Gramattica", 125, 40);
+		g.drawString("Verba", 245, 40);
+		g.drawString("Culturalia", 365, 40);
+		g.drawString("Attunement", 485, 40);
+		g.drawString("Navigation", 605, 40);
 		g.drawString("Menu", 725, 40);
 
 		// DRAW TOP MENU TEXT
