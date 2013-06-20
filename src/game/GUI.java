@@ -14,7 +14,7 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 		MouseMotionListener {
 
 	int mX, mY;
-	boolean menu, keyText, attunement, culturalia, verba, gramatica, clicked;
+	boolean menu, keyText, attunement, culturalia, verba, gramatica, help, clicked;
 	String input;
 	
 	private Messages messages = Messages.getInstance();
@@ -168,4 +168,54 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 		this.clicked = clicked;
 	}
 
+	public boolean isKeyText() {
+		return keyText;
+	}
+
+	public void setKeyText(boolean keyText) {
+		this.keyText = keyText;
+	}
+
+	public boolean isAttunement() {
+		return attunement;
+	}
+
+	public void setAttunement(boolean attunement) {
+		this.attunement = attunement;
+	}
+
+	public boolean isCulturalia() {
+		return culturalia;
+	}
+
+	public void setCulturalia(boolean culturalia) {
+		this.culturalia = culturalia;
+	}
+
+	public boolean isVerba() {
+		return verba;
+	}
+
+	public void setVerba(boolean verba) {
+		this.verba = verba;
+	}
+
+	public boolean isGramatica() {
+		return gramatica;
+	}
+
+	public void setGramatica(boolean gramatica) {
+		this.gramatica = gramatica;
+	}
+
+	public boolean isHelp() {
+		return help;
+	}
+
+	public void setHelp(boolean help) {
+		this.help = help;
+	}
+
+	
+	
 }

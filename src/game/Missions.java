@@ -19,7 +19,7 @@ public class Missions {
 	
 	public void standBy(){
 		
-		
+		functions.write("Please choose a mission to contine", false);
 		
 	}
 	
