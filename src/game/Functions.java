@@ -19,6 +19,7 @@ public class Functions {
 
 	public void write(String text, boolean keep){
 		
+		
 		if(keep == false){
 			out = "";
 		}
