@@ -14,7 +14,7 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 		MouseMotionListener {
 
 	int mX, mY;
-	boolean menu, keyText, attunement, culturalia, verba, gramatica, help, clicked;
+	boolean menu, keyText, attunement, culturalia, verba, grammatica, navigation, help, clicked;
 	String input;
 	
 	private Messages messages = Messages.getInstance();
@@ -96,6 +96,18 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 				} else {
 					menu = false;
 				}
+				
+				if (help == true){
+					help = false;
+					menu = true;
+				}
+				
+				keyText = false;
+				grammatica = false;
+				verba = false;
+				culturalia = false;
+				attunement = false;
+				navigation = false;
 				
 
 		} else if (key == KeyEvent.VK_ENTER) {
@@ -201,11 +213,11 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 	}
 
 	public boolean isGramatica() {
-		return gramatica;
+		return grammatica;
 	}
 
 	public void setGramatica(boolean gramatica) {
-		this.gramatica = gramatica;
+		this.grammatica = gramatica;
 	}
 
 	public boolean isHelp() {
@@ -214,6 +226,14 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 
 	public void setHelp(boolean help) {
 		this.help = help;
+	}
+
+	public boolean isNavigation() {
+		return navigation;
+	}
+
+	public void setNavigation(boolean navigation) {
+		this.navigation = navigation;
 	}
 
 	

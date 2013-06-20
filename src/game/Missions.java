@@ -15,7 +15,6 @@ public class Missions {
 	
 	private Functions functions = Functions.getInstance();
 	String missionName;
-	int attunement, keyText;
 	
 	public void standBy(){
 		
@@ -33,13 +32,6 @@ public class Missions {
 		
 		missionName = "Mission 1.1.0 - Training Mission";
 		
-		if (attunement == 1){
-			
-		}
-		
-		if (keyText == 1){
-			
-		}
 		
 	}
 	

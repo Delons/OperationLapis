@@ -1,0 +1,11 @@
+>Outskirts of Pompeii, Italia, 79 CE<
+
+Your Recentius is standing, on a bright Italian summer day, near the slopes of Mount Vesuvius. Refer to the TSTT Navigation Device in the CODEX for geographic orientation. 
+
+There is a field nearby, with an olive tree in it. 
+
+persona tua est in via. 
+malus est in via. 
+"quid,” malus inquit, “nomen est tibi?" 
+
+Prompt: Answer the ruffian; you are not required to tell him your actual nomen.

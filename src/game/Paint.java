@@ -66,7 +66,7 @@ public class Paint extends JPanel {
 		// DRAW MENU BUTTON TEXT
 		g.setColor(Color.BLACK);
 		g.drawString("Key Text", 25, 40);
-		g.drawString("Gramattica", 125, 40);
+		g.drawString("Grammatica", 125, 40);
 		g.drawString("Verba", 245, 40);
 		g.drawString("Culturalia", 365, 40);
 		g.drawString("Attunement", 485, 40);
@@ -147,6 +147,10 @@ public class Paint extends JPanel {
 			
 			g.drawImage(logo, 250, 210, 100, 100, this);
 
+		}
+		
+		if (gui.isKeyText() == true){
+			
 		}
 
 	}
