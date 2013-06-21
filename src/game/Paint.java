@@ -15,6 +15,7 @@ public class Paint extends JPanel {
 	private Missions missions = Missions.getInstance();
 	private Functions functions = Functions.getInstance();
 	private Messages messages = Messages.getInstance();
+	private SaveLoad saveLoad = SaveLoad.getInstance();
 
 	public static Paint getInstance() {
 		if (paint == null) {
@@ -52,23 +53,23 @@ public class Paint extends JPanel {
 				g.setColor(Color.gray);
 
 				if (gui.isClicked() == true) {
-					
+
 					if (x < 120) {
 						gui.setKeyText(true);
-					} else if(x < 240) {
+					} else if (x < 240) {
 						gui.setGrammatica(true);
 					} else if (x < 360) {
 						gui.setVerba(true);
-					} else if (x < 480){
+					} else if (x < 480) {
 						gui.setCulturalia(true);
-					} else if (x < 600){
+					} else if (x < 600) {
 						gui.setAttunement(true);
 					} else if (x < 720) {
 						gui.setNavigation(true);
 					} else if (x < 840) {
 						gui.setMenu(true);
 					}
-					
+
 				}
 
 			}
@@ -120,7 +121,7 @@ public class Paint extends JPanel {
 				g.setColor(Color.black);
 				g.drawRect(330, y, 140, 30);
 
-				if (gui.getmY() > y + 30 && gui.getmY() < y && gui.getmX() > 330 && gui.getmX() < 330 + 140) {
+				if (gui.getmY() < y + 30 && gui.getmY() > y && gui.getmX() > 330 && gui.getmX() < 330 + 140) {
 					g.setColor(Color.gray);
 				} else {
 					g.setColor(Color.lightGray);
@@ -128,11 +129,20 @@ public class Paint extends JPanel {
 
 				g.fillRect(331, y + 1, 139, 29);
 
+				if (gui.isClicked() == true){
+					if(y > 40 && y < 170){
+						gui.setSettings(true);
+					} else if (y > 180 && y < 210){
+						saveLoad.loadGame();
+					} else if (y > 190 && y < 250){
+						saveLoad.newGame();
+					}
+				}
+				
 			}
 
 			g.setColor(Color.black);
 			g.drawString("Settings", 360, 160);
-			// ADD UPDATE CHECKER IN THE OPTIONS MENU
 			g.drawString("Load Game", 360, 200);
 			g.drawString("Save Game", 360, 240);
 			g.drawString("New Game", 360, 280);
@@ -158,16 +168,38 @@ public class Paint extends JPanel {
 			g.fillRect(241, 201, 349, 179);
 			g.setColor(Color.black);
 			g.drawString(messages.getMessageText(), 310, 210);
-			
+
 			g.drawImage(logo, 250, 210, 100, 100, this);
 
 		}
+
+		if (gui.isKeyText() == true) {
+
+		}
+
+		if (gui.isAttunement() == true) {
+
+		}
 		
-		if (gui.isKeyText() == true){
+		if (gui.isCulturalia() == true){
 			
 		}
 		
-		//if gui.isGramma
+		if (gui.isVerba() == true){
+			
+		}
+		
+		if (gui.isGrammatica() == true) {
+			
+		}
+		
+		if (gui.isNavigation() == true){
+			
+		}
+		
+		if (gui.isSettings() == true){
+			
+		}
 
 	}
 

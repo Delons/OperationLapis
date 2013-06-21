@@ -14,9 +14,10 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 		MouseMotionListener {
 
 	int mX, mY;
-	boolean menu, keyText, attunement, culturalia, verba, grammatica, navigation, help, clicked;
+	boolean menu, keyText, attunement, culturalia, verba, grammatica,
+			navigation, help, clicked, settings;
 	String input;
-	
+
 	private Messages messages = Messages.getInstance();
 
 	private static GUI instance;
@@ -82,7 +83,7 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 	public void mouseReleased(MouseEvent e) {
 
 		clicked = false;
-		
+
 	}
 
 	@Override
@@ -91,27 +92,26 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 		int key = e.getKeyCode();
 
 		if (key == KeyEvent.VK_ESCAPE) {
-				if (menu == false){
-					menu = true;
-				} else {
-					menu = false;
-				}
-				
-				if (help == true){
-					help = false;
-					menu = true;
-				}
-				
-				keyText = false;
-				grammatica = false;
-				verba = false;
-				culturalia = false;
-				attunement = false;
-				navigation = false;
-				
+			if (menu == false) {
+				menu = true;
+			} else {
+				menu = false;
+			}
+
+			if (help == true) {
+				help = false;
+				menu = true;
+			}
+
+			keyText = false;
+			grammatica = false;
+			verba = false;
+			culturalia = false;
+			attunement = false;
+			navigation = false;
 
 		} else if (key == KeyEvent.VK_ENTER) {
-			if (messages.isShowMessage() == true){
+			if (messages.isShowMessage() == true) {
 				messages.setShowMessage(false);
 			}
 		}
@@ -170,7 +170,6 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 	public String getInput() {
 		return input;
 	}
-	
 
 	public boolean isClicked() {
 		return clicked;
@@ -234,6 +233,14 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 
 	public void setNavigation(boolean navigation) {
 		this.navigation = navigation;
+	}
+
+	public boolean isSettings() {
+		return settings;
+	}
+
+	public void setSettings(boolean settings) {
+		this.settings = settings;
 	}
 
 	
