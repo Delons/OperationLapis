@@ -51,10 +51,24 @@ public class Paint extends JPanel {
 					&& gui.getmX() < x + 123 && gui.isMenu() == false) {
 				g.setColor(Color.gray);
 
-				if (gui.isClicked() == true && gui.getmX() > 720) {
-					gui.setMenu(true);
-				} else {
-
+				if (gui.isClicked() == true) {
+					
+					if (x < 120) {
+						gui.setKeyText(true);
+					} else if(x < 240) {
+						gui.setGrammatica(true);
+					} else if (x < 360) {
+						gui.setVerba(true);
+					} else if (x < 480){
+						gui.setCulturalia(true);
+					} else if (x < 600){
+						gui.setAttunement(true);
+					} else if (x < 720) {
+						gui.setNavigation(true);
+					} else if (x < 840) {
+						gui.setMenu(true);
+					}
+					
 				}
 
 			}
@@ -152,6 +166,8 @@ public class Paint extends JPanel {
 		if (gui.isKeyText() == true){
 			
 		}
+		
+		//if gui.isGramma
 
 	}
 

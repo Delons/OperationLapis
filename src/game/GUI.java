@@ -212,11 +212,11 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 		this.verba = verba;
 	}
 
-	public boolean isGramatica() {
+	public boolean isGrammatica() {
 		return grammatica;
 	}
 
-	public void setGramatica(boolean gramatica) {
+	public void setGrammatica(boolean gramatica) {
 		this.grammatica = gramatica;
 	}
 
