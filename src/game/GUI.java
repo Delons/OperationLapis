@@ -15,10 +15,12 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 
 	int mX, mY;
 	boolean menu, keyText, attunement, culturalia, verba, grammatica,
-			navigation, help, clicked, settings;
+			navigation, help, clicked, settings, devScreen;
 	String input;
-
+	String keyPressed;
+	
 	private Messages messages = Messages.getInstance();
+	private Functions functions = Functions.getInstance();
 
 	private static GUI instance;
 
@@ -91,6 +93,8 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 
 		int key = e.getKeyCode();
 
+		keyPressed = e.getKeyText(key);
+		
 		if (key == KeyEvent.VK_ESCAPE) {
 			if (menu == false) {
 				menu = true;
@@ -100,6 +104,11 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 
 			if (help == true) {
 				help = false;
+				menu = true;
+			}
+
+			if (settings == true) {
+				settings = false;
 				menu = true;
 			}
 
@@ -114,13 +123,26 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 			if (messages.isShowMessage() == true) {
 				messages.setShowMessage(false);
 			}
+
+			if (functions.getSleep() == 50) {
+				functions.setSleep(5);
+			}
+
+		} else if (key == KeyEvent.VK_F1){
+			if (devScreen == false){
+				devScreen = true;
+			} else {
+				devScreen = false;
+				f.setSize(800, 600);
+			}
 		}
 
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+
+		keyPressed = null;
 
 	}
 
@@ -243,6 +265,20 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 		this.settings = settings;
 	}
 
-	
-	
+	public boolean isDevScreen() {
+		return devScreen;
+	}
+
+	public void setDevScreen(boolean devScreen) {
+		this.devScreen = devScreen;
+	}
+
+	public String getKeyPressed() {
+		return keyPressed;
+	}
+
+	public void setKeyPressed(String keyPressed) {
+		this.keyPressed = keyPressed;
+	}
+
 }

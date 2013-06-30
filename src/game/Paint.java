@@ -199,8 +199,49 @@ public class Paint extends JPanel {
 		
 		if (gui.isSettings() == true){
 			
+			gui.setMenu(false);
+			
+			
+			
+		}
+		
+		if (gui.isMenu() == true || gui.isSettings() == true){
+			functions.setPaused(true);
+		} else {
+			functions.setPaused(false);
 		}
 
+		gui.f.setTitle("Operation Lapis - " + missions.getMissionName());
+		
+		if (gui.isDevScreen() == true){
+			
+			gui.f.setSize(800, 700);
+			g.setColor(Color.black);
+			g.drawString("Developer Menu/Settings:", 5, 560);
+			g.drawString("Key Text Menu: " + gui.isKeyText(), 5, 575);
+			g.drawString("Attunement Menu: " + gui.isAttunement(), 5, 590);
+			g.drawString("Culturalia Menu: " + gui.isCulturalia(), 5, 605);
+			g.drawString("Verba Menu: " + gui.isVerba(), 5, 620);
+			g.drawString("Grammatica Menu: " + gui.isGrammatica(), 5, 635);
+			g.drawString("Navigation Menu: " + gui.isNavigation(), 5, 650);
+			g.drawString("Settings Menu: " + gui.isSettings(), 5, 665);
+			
+			g.drawString("Paused: " + functions.isPaused(), 200, 575);
+			g.drawString("Sleep: " + functions.getSleep(), 200, 590);
+			
+			g.drawString("Mission Name: " + missions.missionName, 395, 575);
+			
+			g.drawString("Last Time: " + lastTime, 590, 575);
+			g.drawString("Last Time 2: " + lastTime2, 590, 590);
+			g.drawString("Curent Time: " + currentTime, 590, 605);
+			g.drawString("FPS: " + fps, 590, 620);
+			g.drawString("Mouse X: " + gui.getmX(), 590, 635);
+			g.drawString("Mouse Y: " + gui.getmY(), 590, 650);
+			g.drawString("Key: " + gui.getKeyPressed(), 590, 665);
+			
+			//TODO: Add level and calculations
+		}
+		
 	}
 
 }

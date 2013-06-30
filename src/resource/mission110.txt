@@ -1,3 +1,5 @@
+missionName="Mission 1.1.0 - Training Mission"
+
 >Outskirts of Pompeii, Italia, 79 CE<
 
 Your Recentius is standing, on a bright Italian summer day, near the slopes of Mount Vesuvius. Refer to the TSTT Navigation Device in the CODEX for geographic orientation. 

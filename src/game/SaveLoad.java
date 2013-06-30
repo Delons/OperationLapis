@@ -5,6 +5,7 @@ public class SaveLoad {
 	private GUI gui = GUI.getInstance();
 	
 	private static SaveLoad saveLoad;
+	private static Functions functions;
 	
 	public static SaveLoad getInstance(){
 		if (saveLoad == null){
@@ -19,6 +20,9 @@ public class SaveLoad {
 	
 	public void loadGame(){
 		gui.setMenu(false);
+		
+		functions.write("Please choose the location on your save file.", false);
+		
 	}
 	
 	public void newGame(){

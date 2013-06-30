@@ -3,42 +3,42 @@ package game;
 import javax.swing.JOptionPane;
 
 public class Functions {
-	
+
 	public static Functions functions;
-	
-	public static Functions getInstance(){
-		if (functions == null){
+
+	public static Functions getInstance() {
+		if (functions == null) {
 			functions = new Functions();
 		}
 		return functions;
 	}
-	
+
 	boolean paused;
 	String out = "";
 	int sleep = 50;
 
-	public void write(String text, boolean keep){
+	public void write(String text, boolean keep) {
+
+		sleep = 50;
 		
-		if(keep == false){
+		if (keep == false) {
 			out = "";
 		}
-		
-		for (int x = 0; x < text.length() - 1; x++){
-			out += text.substring(x, x + 1);
-			try{
-				Thread.sleep(sleep);
-			} catch (Exception e){}
+
+		for (int x = 0; x < text.length() - 1; x++) {
+			if (paused == false) {
+				out += text.substring(x, x + 1);
+				try {
+					Thread.sleep(sleep);
+				} catch (Exception e) {
+				}
+			} else {
+				x -= 1;
+			}
 		}
 		
-		
-	}
-	
-	public boolean isWriting() {
-		return paused;
-	}
+		sleep = 50;
 
-	public void setWriting(boolean writing) {
-		this.paused = writing;
 	}
 
 	public String getOut() {
@@ -49,5 +49,20 @@ public class Functions {
 		this.out = out;
 	}
 
+	public boolean isPaused() {
+		return paused;
+	}
+
+	public void setPaused(boolean paused) {
+		this.paused = paused;
+	}
+
+	public int getSleep() {
+		return sleep;
+	}
+
+	public void setSleep(int sleep) {
+		this.sleep = sleep;
+	}
 	
 }
