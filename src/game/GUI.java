@@ -57,9 +57,6 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 
 	public void mouseClicked(MouseEvent e) {
 
-		if (e.getButton() == MouseEvent.BUTTON1) {
-			clicked = true;
-		}
 
 	}
 
@@ -77,7 +74,10 @@ public class GUI extends JPanel implements KeyListener, MouseListener,
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
+
+		if (e.getButton() == MouseEvent.BUTTON1) {
+			clicked = true;
+		}
 
 	}
 

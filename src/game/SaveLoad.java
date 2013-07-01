@@ -16,6 +16,16 @@ public class SaveLoad {
 	
 	public void saveGame(){
 		
+		//TODO: Make it save game
+		
+		functions.write("Game sucessfully saved!", false);
+		
+		try {
+			//TODO: Make Sleep
+			} catch (Exception e) {
+			
+		}
+		
 	}
 	
 	public void loadGame(){
@@ -26,6 +36,12 @@ public class SaveLoad {
 	}
 	
 	public void newGame(){
+		
+		gui.setMenu(false);
+		
+		functions.write("Please choose a name for your character.", false);
+		
+		
 		
 	}
 	

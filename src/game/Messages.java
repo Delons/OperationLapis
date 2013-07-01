@@ -16,7 +16,6 @@ public class Messages {
 	
 	public void welcome(){
 		
-		showMessage = true;
 		messageText = "The Demiurge welcomes you to Operation Lapis. \n\nPress enter to continue...";
 		
 	}

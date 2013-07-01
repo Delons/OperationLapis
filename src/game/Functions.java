@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 public class Functions {
 
 	public static Functions functions;
+	public static GUI gui;
 
 	public static Functions getInstance() {
 		if (functions == null) {
@@ -39,6 +40,13 @@ public class Functions {
 		
 		sleep = 50;
 
+	}
+	
+	public String read(){
+		
+		
+		
+		return gui.getInput();
 	}
 
 	public String getOut() {

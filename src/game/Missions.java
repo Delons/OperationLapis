@@ -18,6 +18,7 @@ public class Missions {
 	
 	public void standBy(){
 		
+		missionName = "Stand By";
 		functions.write("Please choose a mission to contine", false);
 		
 	}

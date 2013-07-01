@@ -31,6 +31,8 @@ public class Paint extends JPanel {
 
 		lastTime2 = currentTime;
 		currentTime = (int) System.currentTimeMillis();
+		
+		
 		if (currentTime - lastTime > 500) {
 			lastTime = currentTime;
 			fps = 1000 / (currentTime - lastTime2);
@@ -136,7 +138,7 @@ public class Paint extends JPanel {
 						saveLoad.loadGame();
 					} else if (y > 190 && y < 250){
 						saveLoad.newGame();
-					}
+					} 
 				}
 				
 			}
@@ -228,6 +230,7 @@ public class Paint extends JPanel {
 			
 			g.drawString("Paused: " + functions.isPaused(), 200, 575);
 			g.drawString("Sleep: " + functions.getSleep(), 200, 590);
+			g.drawString("Clicked: " + gui.isClicked(), 200, 605);
 			
 			g.drawString("Mission Name: " + missions.missionName, 395, 575);
 			
